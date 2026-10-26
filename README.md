@@ -14,7 +14,6 @@
 24th April, 5pm.
 
 ## Team Links (Shortcuts)
-- https://drive.google.com/drive/folders/1wSpzg-cUEPZ4pO7Xjx4Y8sgsnmMPxQSo - Google Drive Link (for all our documentation & non-git work).
 - https://docs.google.com/document/d/1JDlQ3JDGe7_OHMBBj41siAfk2ZqyR-av/ - Data Dictionary
 
 ## Allocation of work among devs
