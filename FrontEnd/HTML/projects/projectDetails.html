@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Project Details</title>
+		<link rel="stylesheet" href="../../CSS/style.css">
+		<link rel="icon" type="image/png" href="https://drive.google.com/thumbnail?id=1R7waxfnSfrnAyf5ncie_waqj6zBP5m3f"> <!-- https://stackoverflow.com/questions/11488960/how-do-i-put-my-websites-logo-to-be-the-icon-image-in-browser-tabs -->
+		<script defer src="../../JavaScript/Projects/projectDetails.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.0/chart.umd.min.js"></script>
+	</head>
+	
+	<body>
+		<header id="top">
+			<div class="logo">
+				<img src="https://drive.google.com/thumbnail?id=1R7waxfnSfrnAyf5ncie_waqj6zBP5m3f" alt="Logo">
+			</div>
+			
+			<h1 class="title">
+				University of East London <br>
+				<span style="font-size: 0.6em;">Sustainability Research Institute</span>
+			</h1>
+			
+			<nav>
+				<a href = "../menu.html">Home</a> |
+				<a href = "../researchers/researchers.html">Researchers</a> |
+				<a href = "../publications/publications.HTML">Publications</a> |
+				<a href = "../projects/projects.html">Projects</a> |
+				<a href = "../partners/partners.HTML">Partners</a> |
+				<a href = "../areas/areas.HTML">Areas</a> | 
+				<a href = "../business/businesses.HTML">Businesses</a> |
+				<a href = "../sessions/sessions.HTML">Sessions</a> |
+				<a href = "../reports.html">Reports</a>
+			</nav>
+		</header>
+		
+		<div>
+			<h2>Project Info</h2>
+			<p id="pd-projectTitle">
+				<strong>Project Title:</strong>
+			</p>
+			<p id="pd-projectSummary">
+				<strong>Summary:</strong>
+			</p>
+			
+			<h3>Timeline</h3>
+			<p id="pd-startDate">
+				<strong>Start Date:</strong>
+			</p>
+			<p id="pd-endDate">
+				<strong>Estimated End Date:</strong>
+			</p>
+			<p id="pd-length">
+				<strong>Estimated Length (days):</strong>
+			</p>
+			
+			<h3>Status</h3>
+			<p id="pd-status">
+				<strong>Status:</strong>
+			</p>
+			<p id="pd-daysUntilStart"></p>
+			<p id="pd-daysUntilEnd"></p>
+		</div>
+		
+		<hr>
+		
+		<div>
+			<h2>Partner Info</h2>
+			<p id="pd-partnerName">
+				<strong>Partner Name:</strong>
+			</p>
+			<p id="pd-partnerSector">
+				<strong>Sector:</strong>
+			</p>
+			<p id="pd-partnerAid">
+				<strong>Aid Description:</strong>
+			</p>
+			<p id="pd-partnerArea">
+				<strong>Area:</strong>
+			</p>
+		</div>
+		
+		<hr>
+		
+		<div>
+			<h2>Project's Researchers</h2>
+			<button id="researchers-toggle">Show Table ▼</button>
+			<table class="data-table" id="pd-researchersTable" style="display: none;"> <!-- initially, dont show table w/ style="display: none;" -->
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Role</th>
+						<th>Expertise</th>
+						<th>Email</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+		</div>
+		
+		<hr>
+		
+		<div>
+			<!-- the DB schema we have doesnt link to tblProject on what project is being discussed over in the session, so this is general. -->
+			<h2>Sessions</h2>
+			<h3><i>All Sessions Presented by this Project's Researchers</i></h3>
+			<button id="sessions-toggle">Show Table ▼</button>
+			<table class="data-table" id="pd-sessionsTable" style="display: none;">
+				<thead>
+					<tr>
+						<th>Session Name</th>
+						<th>Type</th>
+						<th>Attendance</th>
+						<th>Business</th>
+						<th>Researcher</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+		</div>
+		
+		<hr>
+		
+		<div>
+			<!-- all the publications by the reserachers, i'm still including it since it can include publications that used insight from this project. -->
+			<h2>Publications</h2>
+			<h3><i>Research Output of this Project's Researchers</i></h3>
+			<button id="publications-toggle">Show Table ▼</button>
+			<table class="data-table" id="pd-publicationsTable" style="display: none;">
+				<thead>
+					<tr>
+						<th>Title</th>
+						<th>Date</th>
+						<th>Summary</th>
+						<th>Researcher</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+		</div>
+		
+		<hr>
+		
+		<div>
+			<h2>How Sessions are delivered by Researchers for Projects like these</h2>
+			<!-- Chart of Session Types (online in-person hybrid) Pie chart from Projects->ProjectResearchers->Researchers->Sessions, "how projects like these are presented in sessions" -->
+			<!-- https://www.chartjs.org/docs/latest/charts/doughnut.html#doughnut -->
+			<div class="chart-container">
+				<canvas id="pd-sessions-types-chart"></canvas>
+			</div>
+		</div>
+		
+		<footer>
+			<p>Contact Us: <b>Email:</b> study@uel.ac.uk <b>Tel:</b> +44 3495 295867 <br>
+				<a href = "#top" id = "footer-nav">Back to Top</a>
+			</p>
+		</footer>
+		
+	</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Projects</title>
+		<link rel="stylesheet" href="../../CSS/style.css">
+		<link rel="icon" type="image/png" href="https://drive.google.com/thumbnail?id=1R7waxfnSfrnAyf5ncie_waqj6zBP5m3f"> <!-- https://stackoverflow.com/questions/11488960/how-do-i-put-my-websites-logo-to-be-the-icon-image-in-browser-tabs -->
+		<script defer src="../../JavaScript/Projects/projects.js"></script>
+	</head>
+	
+	<body>
+		<header id="top">
+			<div class="logo">
+				<img src="https://drive.google.com/thumbnail?id=1R7waxfnSfrnAyf5ncie_waqj6zBP5m3f" alt="Logo">
+			</div>
+			
+			<h1 class="title">
+				University of East London <br>
+				<span style="font-size: 0.6em;">Sustainability Research Institute</span>
+			</h1>
+			
+			<nav>
+				<a href = "../menu.html">Home</a> |
+				<a href = "../researchers/researchers.html">Researchers</a> |
+				<a href = "../publications/publications.HTML">Publications</a> |
+				<a href = "../projects/projects.html">Projects</a> |
+				<a href = "../partners/partners.HTML">Partners</a> |
+				<a href = "../areas/areas.HTML">Areas</a> | 
+				<a href = "../business/businesses.HTML">Businesses</a> |
+				<a href = "../sessions/sessions.HTML">Sessions</a> |
+				<a href = "../reports.html">Reports</a>
+			</nav>
+		</header>
+		
+		<img src="../../Images/Team-project.jpg" alt="Projects-Drawing">
+		
+		<h2 id="text_headerImage">
+			PROJECTS
+			<br>
+			<span style="font-size: 0.6em;">Driving research into a sustainable impact...</span>
+		</h2>
+		
+		<p id="text_blackBox">
+			Projects are the work of researchers and partners, collaborating to develop sustainable solutions to real-world problems.<br>
+			Each project represents the combined effort to approach and attempt resolving real-world challenges, by mixing researchers' academic input with the funding, resources, & support of partner organisations.<br>
+			Through these projects, researchers & partners can work hand-in-hand, growing stronger connections across businesses, speading a positive impact to be shared amongst closely working organisations.<br>
+			This page allows the managing of project records, to ensure details such as timelines, summaries, & associated partners, remain accurate & up to date.
+		</p>
+		
+		
+		
+		
+		
+		
+		<!-- Project Table Filtering -->
+		<h2 class="centred-text"><i>Current Projects - Explore our Work</i></h2>
+		<form class="project-table-filtering">
+			<p>
+				Use the inputs below to filter the rows of the table accordingly:
+				<br>
+				<label for="projectName">Project Title: </label><input type="text" id="projNameFInput" class="project-table-filtering">
+				<br>
+				<label for="startDate">Start Date: </label><input type="date" id="startDateFInput" class="project-table-filtering">
+				<br>
+				<label for="partnerInvolved">Partner Involved: </label><input type="text" id="partnerInvolvedFInput" class="project-table-filtering">
+			</p>
+		</form>
+		
+		<button id="projects-toggle">Show Table ▼</button>
+		<!-- Projects Table itself -->
+		<table class="data-table" id="projects-table" style="display: none;">
+			<thead>
+				<tr>
+					<th>Project ID</th>
+					<th>Project Title</th>
+					<th>Partner Involved</th>
+					<th>Start Date</th>
+					<th>Length</th>
+					<th>Summary Details</th>
+					<th>View (Opens New Tab)</th>
+					<th>Edit</th>
+					<th>Delete</th>
+				</tr>
+			</thead>
+			
+			<tbody></tbody>
+		</table>
+		
+		
+		
+		
+		
+		
+		<!-- AED -->
+		<div class="tab-buttons">
+			<button onclick="openTab('add-project')">Add Project</button>
+			<button onclick="openTab('nonfunctional-edit-project')">Edit Project</button>
+		</div>
+		
+		<!-- Adding Section -->
+		<div id="add-project" class="tab-panel">
+			<form id="addProjectForm">
+				<p class="centred-text">Add a project to the database here</p>
+				<table class="centred-table" id="aed-add-table">
+					<thead>
+						<tr>
+							<th>Project Title</th>
+							<th>Partner Involved</th>
+							<th>Start Date</th>
+							<th>Est. No. of Days</th>
+							<th>Summary</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<input type="text" id="addProjTitleInput" minlength="3" maxlength="50" required>
+							</td>
+							<td>
+								<select id="addPartnersCbx">
+									<option value=0> - Please Select an Option: - </option>
+								</select>
+							</td>
+							<td>
+								<input type="date" id="addStartDateInput">
+							</td>
+							<td>
+								<input type="number" id="addNoOfDaysInput" min="1" max="3650" required>
+							</td>
+							<td>
+								<input type="text" id="addSummaryInput" maxlength="500" required>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				
+				<button type="submit">Submit New Project</button>
+			</form>
+			<div id="confirm-added-project" style="display: none;"><h3>Project Added Successfully!</h3></div>
+		</div>
+		
+		<!-- Editing Section -->
+		<!-- Show this section as "default editing section" and then the section that shows up when clicked from table as "actual editing section" or smth like that -->
+		<div id="nonfunctional-edit-project" class="tab-panel">
+			<p class="centred-text">Select a Project to Edit from the Table Above</p> <!-- once project clicked to edit, new section shows up with `Viewing Project "", ID: ` -->
+		</div>
+		
+		<!-- actual functional editing section: -->
+		<div id="functional-edit-project" class="tab-panel">
+			<form id="editProjectForm">
+				<p id="editProjectPreface" class="centred-text">Test</p>
+				<table class="centred-table" id="aed-edit-table">
+					<thead>
+						<tr>
+							<th>Project Title</th>
+							<th>Partner Involved</th>
+							<th>Start Date</th>
+							<th>Est. No. of Days</th>
+							<th>Summary</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<input type="text" id="editProjTitleInput" minlength="3" maxlength="50" required>
+							</td>
+							<td>
+								<select id="editPartnersCbx">
+								</select>
+							</td>
+							<td>
+								<input type="date" id="editStartDateInput">
+							</td>
+							<td>
+								<input type="number" id="editNoOfDaysInput" min="1" max="3650" required>
+							</td>
+							<td>
+								<input type="text" id="editSummaryInput" maxlength="500" required>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				
+				<button type="submit">Submit Edited Project</button>
+			</form>
+			
+			<div id="confirm-edited-project" style="display: none;"><h3>Project Updated Successfully!</h3></div>
+		</div>
+		
+		<!-- The Footer -->
+		<footer>
+			<p>Contact Us: <b>Email:</b> study@uel.ac.uk <b>Tel:</b> +44 3495 295867 <br>
+				<a href = "#top" id = "footer-nav">Back to Top</a>
+			</p>
+		</footer>
+		
+	</body>
+</html>

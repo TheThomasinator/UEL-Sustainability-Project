@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Areas</title>
+	<link rel="stylesheet" href="../../CSS/style.css">
+	<link rel="icon" type="image/png" href="https://drive.google.com/thumbnail?id=1R7waxfnSfrnAyf5ncie_waqj6zBP5m3f">
+
+  <script src= "../../JavaScript/Areas/areaScript.js";></script>
+ 
+</head>
+
+<body>`
+
+<header>
+  <div class="logo">
+    <img src="https://drive.google.com/thumbnail?id=1R7waxfnSfrnAyf5ncie_waqj6zBP5m3f" alt="Logo">
+  </div>
+
+  <h1 class="title">
+    University of East London <br><span style="font-size: 0.6em;">Sustainability Research Institute</span>
+  </h1>
+
+  <nav>
+    <a href = "../menu.html">Home</a> |
+    <a href= "../researchers/researchers.html">Researchers</a> |
+    <a href= "../publications/publications.HTML">Publications</a> |
+    <a href= "../projects/projects.html">Projects</a> |
+    <a href= "../partners/partners.HTML">Partners</a> |
+    <a href= "../areas/areas.HTML">Areas</a> | 
+    <a href= "../business/businesses.HTML">Businesses</a> |
+    <a href= "../sessions/sessions.HTML">Sessions</a> |
+    <a href= "../reports.html">Reports</a>
+  </nav>
+</header>
+
+<div class="container">
+
+    <img id="headerImage" src="../../Images/area.jpg"
+      alt="Sessions meeting">
+    <h2 id="text_headerImage">AREAS <br><span style="font-size: 0.6em;">Key details for every location, postcode, environment rating, and area name in one place.</span>
+    </h2>
+
+  </div>
+
+  <div id="areaDescription">
+
+    <p> The Areas page provides a structured overview of locations linked to businesses within the system. 
+      Each area displays key information such as postcode, environmental status, and area name, allowing users to compare locations and understand regional differences. 
+      This section supports analysis of how different areas align with sustainability goals and helps users identify patterns across locations in a clear and organised format.</p>
+
+  </div>
+
+  <div id="searchArea">
+
+    <h2 id="searchAreaHeader">Area Records – View and Compare Location Data</h2>
+    <hr id="sessionHR">
+
+    <div class="areaSearchRow">
+
+     
+
+      <div class="areaSearchSection">
+
+        <h3>Search by:</h3>
+        <form id="areaForm">
+
+          <div id="areaNameFunctions">
+            <label for="areaName">Area Name</label>
+            <input id="areaName" name="areaName"> </input>
+          </div>
+          <br>
+          <div id="areaNumberOfBusinessesFunctions">
+            <label for="areaNumberOfBusinesses">Total Number Of Businesses:</label>
+            <input type="number" id="areaNumberOfBusinesses" name="areaNumberOfBusinesses" min="1" max="10000" step="1">
+          </div>
+          <br>
+          <div id="areaPostcodeFunctions">
+            <label for="areaPostcode">Postcode:</label>
+            <input id="areaPostcode" name="areaPostcode"> </input>
+          </div>
+
+          <button type="button" id="showAreaTableButton"> Collapse Table</button>
+
+        </form>
+      </div>
+    </div>
+
+    
+
+
+  </div>
+
+  <div id="areaTable"></div>
+
+<div id="manageSections">
+
+    <h2 id="searchAreaHeader">Manage Areas</h2>
+    <hr id="sessionHR" style="background-color: white;">
+
+    <div class="tab-buttons" style="padding-top: 0px; text-align: left">
+      <button onclick="openTab('a')">Add Area</button>
+      <button onclick="openTab('b')">Edit Area</button>
+      <button onclick="openTab('c')">Delete Area</button>
+    </div>
+
+    <div id="a" class="areaTab-panel">
+
+
+      <form id="areaTabForms">
+
+        <label for="addAreaPostcode">Postcode:</label>
+        <input id="addAreaPostcode" name="addAreaPostcode">
+        <br>
+        <br>
+
+
+        <label for="addAreaName">Area Name:</label>
+        <input id="addAreaName" name="addAreaName">
+        <br>
+        <br>
+
+        <label for="addNoOfBusinesses">Number of Businesses:</label>
+        <input type="number" id="addNoOfBusinesses" name="addNoOfBusinesses" min="1" max="10000" step="1">
+        <br>
+        <br>
+        <button id="addAreaButton" type="button"> ADD AREA</button>
+        
+
+      </form>
+
+    </div>
+
+    <div id="b" class="areaTab-panel">
+
+
+     <form id="areaTabForms">
+
+        <label for="editAreaPostcode">Postcode:</label>
+        <select id="editAreaPostcode" name="editAreaPostcode">
+          <option value="A"> Select A Postcode:</option>
+        </select>
+        <br>
+        <br>
+
+
+        <label for="editAreaName">Area Name:</label>
+        <input id="editAreaName" name="addAreaName">
+        <br>
+        <br>
+
+        <label for="editNoOfBusinesses">Number of Businesses:</label>
+        <input type="number" id="editNoOfBusinesses" name="editNoOfBusinesses" min="1" max="10000" step="1">
+        <br>
+        <br>
+        <button id="editAreaButton" type="button"> EDIT AREA</button>
+
+      </form>
+
+
+    </div>
+
+    <div id="c" class="areaTab-panel">
+
+
+      <form id="areaTabForms">
+
+       <label for="deleteAreaPostcode">Postcode:</label>
+        <select id="deleteAreaPostcode" name="deleteAreaPostcode">
+          <option value="A"> Select A Postcode:</option>
+        </select>
+        <br>
+        <br>
+
+
+        <label for="deleteAreaName" >Area Name:</label>
+        <input id="deleteAreaName" name="deleteAreaName" readonly>
+         <br>
+        <br>
+
+        <label for="deleteNoOfBusinesses" >Number of Businesses:</label>
+        <input type="number" id="deleteNoOfBusinesses" name="deleteNoOfBusinesses" min="1" max="10000" step="1" readonly>
+         <br>
+        <br>
+        <button id="deleteAreaButton" type="button"> DELETE AREA</button>
+
+      </form>
+
+
+    </div>
+
+
+
+  </div>
+
+
+
+
+
+  </div>
+
+  <script>
+    function openTab(id) {
+      document.querySelectorAll('.areaTab-panel').forEach(p => p.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+      console.log("Tab Clicked:", id);
+       document.getElementById("areaTabForms").reset();
+        resetAreaForm();
+       
+
+     if (id === 'b') {
+        loadEditAreaData();
+       
+    } 
+    else if (id === 'c') {
+        loadDeleteAreaData();
+        
+       
+    }
+
+   
+  }
+      
+  </script>
+
+
+
+
+
+  </div>
+
+<footer>
+  <p>Contact Us: <b>Email:</b> study@uel.ac.uk <b>Tel:</b> +44 3495 295867 <br>
+    <a href = "" id = "footer-nav">Back to Top</a></p>
+</footer>
+
+</body>
+</html>

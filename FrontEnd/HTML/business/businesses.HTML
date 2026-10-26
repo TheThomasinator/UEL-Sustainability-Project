@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Businesses</title>
+	<link rel="stylesheet" href="../../CSS/style.css">
+	<link rel="icon" type="image/png" href="https://drive.google.com/thumbnail?id=1R7waxfnSfrnAyf5ncie_waqj6zBP5m3f">
+  <script src="../../JavaScript/Businesses/businessScript.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.0/chart.umd.min.js"></script>
+ 
+</head>
+
+<body>
+
+  <header id="top">
+    <div class="logo">
+      <img src="https://drive.google.com/thumbnail?id=1R7waxfnSfrnAyf5ncie_waqj6zBP5m3f" alt="Logo">
+    </div>
+
+    <h1 class="title">
+      University of East London <br><span style="font-size: 0.6em;">Sustainability Research Institute</span>
+    </h1>
+
+    <nav>
+      <a href = "../menu.html">Home</a> |
+    <a href= "../researchers/researchers.html">Researchers</a> |
+    <a href= "../publications/publications.HTML">Publications</a> |
+    <a href= "../projects/projects.html">Projects</a> |
+    <a href= "../partners/partners.HTML">Partners</a> |
+    <a href= "../areas/areas.HTML">Areas</a> | 
+    <a href= "../business/businesses.HTML">Businesses</a> |
+    <a href= "../sessions/sessions.HTML">Sessions</a> |
+    <a href= "../reports.html">Reports</a>
+    </nav>
+  </header>
+
+  <img id="headerImage" src="../../Images/Business.jpg"
+    alt="business-image">
+ 
+  <h2 id="text_headerImage">BUSINESSES <span style="font-size: 0.6em;">Advancing knowledge, shaping the future...</span>
+  </h2>
+
+  <p id="text_blackBox">Businesses play a vital role in driving sustainable growth and strengthening local communities,
+    contributing expertise, resources, and innovative thinking across a wide range of sectors.
+    Our business partners engage in meaningful collaboration, from participating in one‑to‑one advisory sessions to
+    improve their environmental performance, to supporting pioneering sustainability initiatives that benefit the wider
+    region.
+    They also work alongside researchers, stakeholders, and community groups to develop impactful projects, share
+    insights, and produce reports and publications that help inform and inspire the public
+.</p>
+
+
+<p id = "text_blackBox">This page enables administration staff to manage business profiles, ensuring that all company
+    information remains accurate, relevant, and up‑to‑date.
+    The details of current business partners can also be accessed and explored using the search tools below, allowing
+    staff to quickly locate specific organisations, review their involvement, and maintain strong, ongoing
+    relationships.</p>
+
+<h3 id = "search_title">Current Businesses - Explore Our Clients</h3>
+
+<hr style="border: 0; height: 2px; background: #333;">
+
+<form>
+<label for = "businessName">Business Name:</label>
+<input type="text" id="businessNameInput" name="businessName">
+<br> 
+
+<label for = "sustainabilityGoal">Sustainability Goal:</label>
+<input type="text" id="sustainabilityGoalInput" name="sustainabilityGoal">
+<br>
+
+<label for = "sustainabilityGoalDate">Sustainability Goal Date:</label>
+<input type="date" id="sustainabilityGoalDateInput" name="sustainabilityGoalDate">
+<br>
+
+<label for = "openingDate">Opening Date:</label>
+<input type="date" id="openingDateInput" name="openingDate">
+<br>
+
+<label for="sustainabilityStatus">Sustainability Status:</label>
+<select id="statusInput" name="status">
+    <option value="">All</option>
+    <option value="Red">Red</option>
+    <option value="Amber">Amber</option>
+    <option value="Green">Green</option>
+</select>
+<br>
+
+<label for = "sustainabilityGoalReached">Sustainability Goal Reached:</label>
+<input type="checkbox" id="sustainabilityGoalReachedInput" name="sustainabilityGoalReached">
+<br>
+
+<label for="postcode">Postcode:</label>
+<select id="postcodeBoxRead" name="postcode">
+      <option value="">All</option>
+</select>
+<br>
+
+<label for = "businessEmail">Business Email:</label>
+<input type="text" id="businessEmailInput" name="businessEmail">
+<br>
+
+<label for = "businessTelephone">Business Telephone:</label>
+<input type="text" id="businessTelephoneInput" name="businessTelephone">
+</form>
+
+<!--business table -->
+<h3 id = table_extra_heading>Businesses</h3>
+
+<details>
+  <summary id = "table_extra_heading">Show / Hide Table</summary>
+  <table id = "businessTable">
+  <tr>
+    <th>Business ID</th>
+    <th>Business Name</th>
+    <th>Sustainability Goal Date</th>
+    <th>Sustainability Status</th>
+    <th>Sustainability Goal</th>
+    <th>Email</th>
+    <th>Telephone</th>
+    <th>Opening Date</th>
+    <th>Sustainability Goal Reached</th>
+    <th>Postcode</th>
+  </tr>
+  </table>
+</details>
+
+<h3 id = "text_blackBox">Manage Businesses</h3>
+
+<hr style="border: 0; height: 2px; background: #666666;">
+
+
+
+<div class="tab-buttons">
+    <button onclick="openTab('a')">Add Business</button>
+    <button onclick="openTab('b')">Edit Business</button>
+    <button onclick="openTab('c')">Delete Business</button>
+</div>
+
+<div id="a" class="tab-panel">
+<!-- Add Details Here -->
+
+<form id = "AB">
+
+<label for = "businessName`">Business Name:</label>
+<input type="text" id="addBusinessName" name="businessName">
+<br> 
+
+<label for = "sustainabilityGoal">Sustainability Goal:</label>
+<input type="text" id="addSustainabilityGoal" name="sustainabilityGoal">
+<br>
+
+<label for = "sustainabilityGoalDate">Sustainability Goal Date:</label>
+<input type="date" id="addSustainabilityGoalDate" name="sustainabilityGoalDate">
+<br>
+
+<label for = "openingDate">Opening Date:</label>
+<input type="date" id="addOpeningDate" name="openingDate">
+<br>
+
+<label for="sustainabilityStatus">Sustainability Status:</label>
+<select id="addSustainabilityStatus" name="sustainabilityStatus">
+    <option value="Red">Red</option>
+    <option value="Amber">Amber</option>
+    <option value="Green">Green</option>
+</select>
+<br>
+
+<label for = "sustainabilityGoalReached">Sustainability Goal Reached:</label>
+<input type="checkbox" id="addSustainabilityGoalReached" name="sustainabilityGoalReached">
+<br>
+
+<label for="postcode">Postcode:</label>
+<select id="postcodeBoxAdd" name="postcode">
+</select>
+<br>
+
+<label for = "businessEmail">Business Email:</label>
+<input type="text" id="addBusinessEmail" name="businessEmail">
+<br>
+
+<label for = "businessTelephone">Business Telephone:</label>
+<input type="text" id="addBusinessTelephone" name="businessTelephone">
+<br>
+
+<br><br>
+<button type = "submit">Add business</button>
+
+</form>
+
+</div>
+<div id="b" class="tab-panel">
+<!-- Edit Details Here -->
+
+<form id = "EB">
+
+  <label for="businessId">Business ID:</label>
+    <select id="editBusinessId" name="businessId">
+</select>
+<br>
+
+<label for = "businessName`">Business Name:</label>
+<input type="text" id="editBusinessName" name="businessName">
+<br> 
+
+<label for = "sustainabilityGoal">Sustainability Goal:</label>
+<input type="text" id="editSustainabilityGoal" name="sustainabilityGoal">
+<br>
+
+<label for = "sustainabilityGoalDate">Sustainability Goal Date:</label>
+<input type="date" id="editSustainabilityGoalDate" name="sustainabilityGoalDate">
+<br>
+
+<label for = "openingDate">Opening Date:</label>
+<input type="date" id="editOpeningDate" name="openingDate">
+<br>
+
+<label for="sustainabilityStatus">Sustainability Status:</label>
+<select id="editSustainabilityStatus" name="sustainabilityStatus">
+    <option value="Red">Red</option>
+    <option value="Amber">Amber</option>
+    <option value="Green">Green</option>
+</select>
+<br>
+
+<label for = "sustainabilityGoalReached">Sustainability Goal Reached:</label>
+<input type="checkbox" id="editSustainabilityGoalReached" name="sustainabilityGoalReached">
+<br>
+
+<label for="postcode">Postcode:</label>
+<select id="postcodeBoxEdit" name="postcode">
+</select>
+<br>
+
+<label for = "businessEmail">Business Email:</label>
+<input type="text" id="editBusinessEmail" name="businessEmail">
+<br>
+
+<label for = "businessTelephone">Business Telephone:</label>
+<input type="text" id="editBusinessTelephone" name="businessTelephone">
+<br>
+  
+<br><br>
+<button type = "submit">Edit Business</button>
+</form>
+
+</div>
+<div id="c" class="tab-panel">
+<!-- Delete Details Here -->
+
+<form id = "DB">
+  <label for="businessId">Business ID:</label>
+    <select id="deleteBusinessId" name="businessId">
+</select>
+<br>
+
+<label for = "businessName`">Business Name:</label>
+<input type="text" id="deleteBusinessName" name="businessName">
+<br> 
+
+<label for = "sustainabilityGoal">Sustainability Goal:</label>
+<input type="text" id="deleteSustainabilityGoal" name="sustainabilityGoal">
+<br>
+
+<label for = "sustainabilityGoalDate">Sustainability Goal Date:</label>
+<input type="date" id="deleteSustainabilityGoalDate" name="sustainabilityGoalDate">
+<br>
+
+<label for = "openingDate">Opening Date:</label>
+<input type="date" id="deleteOpeningDate" name="openingDate">
+<br>
+
+<label for="sustainabilityStatus">Sustainability Status:</label>
+<select id="deleteSustainabilityStatus" name="sustainabilityStatus">
+    <option value="Red">Red</option>
+    <option value="Amber">Amber</option>
+    <option value="Green">Green</option>
+</select>
+<br>
+
+<label for = "sustainabilityGoalReached">Sustainability Goal Reached:</label>
+<input type="checkbox" id="deleteSustainabilityGoalReached" name="sustainabilityGoalReached">
+<br>
+
+<label for="postcode">Postcode:</label>
+<select id="postcodeBoxDelete" name="postcode">
+</select>
+<br>
+
+<label for = "businessEmail">Business Email:</label>
+<input type="text" id="deleteBusinessEmail" name="businessEmail">
+<br>
+
+<label for = "businessTelephone">Business Telephone:</label>
+<input type="text" id="deleteBusinessTelephone" name="businessTelephone">
+<br>
+  
+<br><br>
+<button type = "submit">Delete Business</button>
+
+</form>
+
+</div>
+
+<script>
+function openTab(id) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+}
+</script>
+
+<div>
+			<h2>Businesses by Area</h2>
+			<div class="chart-container-full">
+				<canvas id="myCanvas"></canvas>
+			</div>
+		</div>
+
+
+<hr style="border: 0; height: 2px; background: #333;">
+
+		<!-- The Footer -->
+		<footer>
+			<p>Contact Us: <b>Email:</b> study@uel.ac.uk <b>Tel:</b> +44 3495 295867 <br>
+				<a href = "#top" id = "footer-nav">Back to Top</a>
+			</p>
+		</footer>
+
+</body>
+</html>

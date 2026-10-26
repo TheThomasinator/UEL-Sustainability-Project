@@ -1,0 +1,6 @@
+<script>
+function openTab(id) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+}
+</script>

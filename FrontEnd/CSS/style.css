@@ -1,0 +1,1126 @@
+header {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	grid-template-rows: auto auto;
+	align-items: center;
+	padding: 10px;
+}
+
+button {
+	color: black;
+	/* or any colour you want */
+}
+
+h1 {
+	font-size: 60px;
+	align-items: center;
+	margin-bottom: 0;
+	text-align: center;
+	position: relative;
+	right: 100px;
+}
+
+h2 {
+	font-size: 30px;
+	align-items: center;
+	margin-top: 2px;
+	margin-bottom: 20px;
+}
+
+header,
+nav {
+	position: sticky;
+	margin: 0;
+	background-color: #666666;
+}
+
+nav {
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	color: white;
+	font-size: 30px;
+	grid-column: 1 / 3;
+	/* span full width */
+	grid-row: 2;
+	text-align: center;
+	margin-top: 10px;
+}
+
+nav a:hover {
+	text-shadow: 1px 2px 2px black;
+}
+
+img {
+	width: 100%;
+	height: auto;
+	margin-top: 0;
+}
+
+body {
+	background-color: #333333;
+	margin: 0;
+	font-family: Arial, sans-serif;
+}
+
+hr {
+	border-top: 5px solid #444444;
+	width: 100%;
+	height: 30px;
+	margin: 0;
+}
+
+form {
+	color: black;
+	background-color: #777676;
+	margin: 0;
+	padding: 20px;
+}
+
+select,
+option,
+input[type="text"] {
+	color: black;
+	font-size: 15px;
+	width: 120px;
+}
+
+h3 {
+	text-align: center;
+}
+
+* {
+	color: white;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.centred-text {
+	text-align: center;
+}
+
+.centred-table {
+	margin: 0px auto;
+	/* https://stackoverflow.com/questions/14073188/center-align-a-html-table */
+}
+
+.no-hyperlink-underline {
+	/* https://stackoverflow.com/questions/10853881/how-to-remove-underline-from-a-link-in-html */
+	text-decoration: none;
+}
+
+.project-table-filtering input,
+#addProjectForm input,
+#addProjectForm select,
+#editProjectForm input,
+#editProjectForm select {
+	color: black;
+	background-color: white;
+	/* cant do white text & black background cause <select> options are all just black text. idk why */
+}
+
+#addProjectForm button,
+#editProjectForm button {
+	color: black;
+	background-color: #777777;
+}
+
+#aed-add-table,
+#aed-edit-table {
+	width: 100%;
+	table-layout: fixed;
+	/* means that long text wont expand/widen the columns */
+	border-collapse: collapse;
+	/* each cell gets their own border, so 2 cells next to each other wont join borders, theyll have 2 seperate bordering, borders. so now we combine them */
+}
+
+#aed-add-table td,
+#aed-edit-table td {
+	border: 2px solid black;
+	/* https://stackoverflow.com/questions/29724602/css-how-to-make-nth-table-column-border-thicker-when-column-count-is-variable */
+	padding: 4px;
+	/* 4px of space between the text and the visible border, to give the text some room, not get cramped by the borders */
+}
+
+#aed-add-table input,
+#aed-add-table select,
+#aed-edit-table input,
+#aed-edit-table select {
+	width: 100%;
+	box-sizing: border-box;
+	/* width=content+padding+border now, not just the content, so now width:100% allows everything to fit perfectly within container */
+	padding: 4px;
+}
+
+.chart-container {
+	width: 50vw;
+	/* setting width to half of viewport width; https://www.w3schools.com/css/css_rwd_viewport.asp */
+	height: 100vh;
+	margin: 0 auto;
+	border: 3px solid #000000;
+}
+
+.chart-container-full {
+	width: 100%;
+	height: 100vh;
+	margin: 0 auto;
+}
+
+#partnerNameInput,
+#addPartnerName,
+#editPartnerName,
+#deletePartnerName,
+#editPartnerId,
+#deletePartnerId,
+#businessNameInput,
+#addBusinessName,
+#editBusinessName,
+#deleteBusinessName,
+#editBusinessId,
+#deleteBusinessId {
+	width: 200px;
+}
+
+#sustainabilityGoalInput,
+#addSustainabilityGoal,
+#editSustainabilityGoal,
+#deleteSustainabilityGoal,
+#businessEmailInput,
+#addBusinessEmail,
+#editBusinessEmail,
+#deleteBusinessEmail {
+	width: 300px;
+}
+
+.tab-buttons {
+	background-color: black;
+	padding-top: 20px;
+	margin: 0;
+	width: 100%;
+	color: black;
+}
+
+.tab-buttons button {
+	color: black;
+	background-color: #989696;
+}
+
+.tab-panel.active {
+	display: block;
+}
+
+.tab-panel {
+	color: white;
+	background-color: #666666;
+	padding-top: 20px;
+	border-bottom: 30px solid black;
+	border-left: auto solid black;
+	width: 100%;
+	display: none;
+	margin: 0;
+}
+
+#table_extra_heading {
+	color: white;
+	background-color: #000000;
+	text-align: center;
+	padding: 30;
+	margin: 0;
+}
+
+#partnerTable,
+#businessTable,
+#projectTable,
+#sessionTable {
+	text-align: center;
+	width: 100%;
+}
+
+#partnerTable,
+#businessTable,
+#projectTable,
+#sessionTable :hover {
+	cursor: pointer;
+}
+
+#partnerTable th,
+#businessTable th,
+#projectTable th,
+#sessionTable th {
+	color: whitesmoke;
+	background-color: #363434;
+}
+
+#partnerTable tr,
+td,
+#businessTable tr,
+td,
+#projectTable tr,
+td,
+#sessionTable tr,
+td {
+	color: black;
+	background-color: #666666;
+}
+
+
+#footer-nav {
+	display: block;
+	text-align: right;
+	padding-bottom: 5px;
+	padding-right: 50px;
+}
+
+#text_blackBox {
+	background-color: #000000;
+	margin: 0;
+	width: 100%;
+	font-size: 15px;
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#detail-display-title {
+	background-color: #666666;
+	margin: 0;
+	width: 100%;
+	font-size: 40px;
+	padding-top: 20px;
+	padding-left: 20px;
+	padding-bottom: 20px;
+}
+
+#detail-display {
+	background-color: #666666;
+	margin: 0;
+	width: 100%;
+	font-size: 30px;
+	padding-top: 20px;
+	padding-left: 20px;
+	padding-bottom: 20px;
+}
+
+input[type="date"] {
+	color: #000;
+}
+
+#text_blackBox_details,
+#postcode,
+#aidType,
+#roleDesc,
+#susStatus,
+#susGoal,
+#susDate,
+#susGStatus,
+#email,
+#telephone {
+	background-color: black;
+	margin: 0;
+	width: 100%;
+	font-size: 20px;
+	padding-top: 20px;
+	padding-left: 20px;
+	padding-bottom: 20px;
+}
+
+#table-filterBox {
+	background-color: black;
+	padding: 20px;
+	margin: 0px;
+	font-size: 20px;
+}
+
+#buttonPub,
+#buttonProj {
+	background-color: grey;
+	font-size: 20px;
+}
+
+.buttonRow {
+	display: flex;
+	justify-content: center;
+}
+
+.container {
+	position: relative;
+}
+
+.data-table {
+	color: black !important;
+	background-color: #666666 !important;
+	margin: 0;
+	padding: 20px;
+}
+
+.data-table button {
+	background-color: black;
+	color: white;
+	border: 1px solid white;
+}
+
+.data-table button:hover {
+	cursor: pointer;
+	/* https://blog.logrocket.com/custom-cursor-css/ */
+}
+
+#headerImage {
+	width: 100%;
+	height: 50%;
+	margin-top: 0;
+	margin-bottom: 0;
+	display: block;
+}
+
+#text_headerImage {
+	position: absolute;
+	bottom: 20px;
+	left: 40px;
+	font-size: 50px;
+	text-shadow: 2px 2px 5px black;
+}
+
+footer {
+	background-color: #666666;
+	color: white;
+	padding: 5px;
+	font-size: 40px;
+	margin: 0;
+}
+
+#navigation-menu {
+	list-style: none;
+	width: 90%;
+	display: flex;
+	padding: 0;
+	justify-content: center;
+}
+
+#search_title {
+	font-size: 30px;
+	background-color: #777676;
+	margin: 0;
+	padding: 20px;
+	text-align: center;
+}
+
+.data-table {
+	width: 80%;
+	margin: 20px auto;
+	border-collapse: collapse;
+}
+
+.data-table th,
+.data-table td {
+	padding: 10px;
+	border-bottom: 1px solid #ddd;
+	text-align: left;
+}
+
+.data-table thead th {
+	position: sticky;
+	top: 45px;
+	background: black;
+	z-index: 5;
+}
+
+.footer-bar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 80%;
+	margin: 20px auto;
+}
+
+.logo {
+	margin-top: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.title {
+	grid-column: 2;
+	grid-row: 1;
+	text-align: center;
+}
+
+#divider {
+	margin: 0;
+}
+
+#sessionsDescription,
+#areaDescription {
+	background-color: rgba(0, 0, 0, 0.901);
+	padding: 60px 20px;
+}
+
+#sessionsDescription p,
+#areaDescription p {
+	margin: 0;
+	font-size: 25px;
+	text-align: center;
+}
+
+#searchSessions {
+	position: relative;
+	background-color: #777676;
+	min-height: 800px;
+	text-align: center;
+	padding-top: 20px;
+
+}
+
+#searchArea {
+	position: relative;
+	background-color: #777676;
+	min-height: 500px;
+	text-align: center;
+	padding-top: 20px;
+
+}
+
+
+#searchSessionsHeader,
+#searchAreaHeader {
+	margin-top: 0;
+}
+
+.filter-heading {
+	background-color: rgba(0, 0, 0, 0.595);
+	color: black;
+	margin: 0;
+	font-size: 120%;
+	display: inline-block;
+	border-radius: 5px;
+}
+
+#filter-background {
+	background-color: #777676;
+}
+
+.divider {
+	border: none;
+	border-top: 2px solid #444;
+	width: 80%;
+	margin-top: 3px;
+	margin: 5px auto;
+}
+
+.input-business {
+	color: black;
+	background-color: white;
+}
+
+.mainMenuBody {
+	background-color: black;
+}
+
+.mainMenuSubtitle {
+	font-size: 40px !important;
+	color: white;
+}
+
+.mainMenuBox {
+	position: sticky;
+	margin: 0;
+	background-color: black;
+	font-size: 28px;
+}
+
+.mainMenuHistory {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	/* pushes items apart */
+	gap: 20px;
+	width: 100%;
+}
+
+.mainMenuHistory img {
+	width: 650px;
+	align: right;
+	height: auto;
+	object-fit: cover;
+	flex-shrink: 0;
+}
+
+.mainMenuHistory p {
+	font-size: 28px;
+}
+
+.sessionsSearchRow,
+.areaSearchRow {
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
+	height: 150px;
+
+
+}
+
+#searchSessions h3,
+#searchArea h3 {
+
+	font-size: 30px;
+}
+
+
+
+.sessionsSearchSection,
+.areaSearchSection {
+
+	position: absolute;
+	left: 20%;
+	/* center point of the page */
+	transform: translateX(-50%);
+
+
+}
+
+#sessionTypeFunctions,
+#sessionNameFunctions,
+#attendanceFunctions,
+#sessionIdFunctions,
+#sessionBusinessIdFunctions,
+#sessionResearcherIdFunctions,
+#areaNameFunctions,
+#areaNumberOfBusinessesFunctions,
+#areaPostcodeFunctions {
+
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+
+
+}
+
+#sessionChart {
+	position: absolute;
+	left: 700px;
+	bottom: -10px;
+
+	max-width: 1000px;
+	max-height: 500px;
+
+
+}
+
+#postcode {
+
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin-top: 8px;
+}
+
+
+
+#sessionsForm,
+#areaForm {
+	text-align: center;
+
+}
+
+
+
+#sessionIdFunctions label,
+#sessionNameFunctions label,
+#sessionTypeFunctions label,
+#attendanceFunctions label,
+#sessionBusinessIdFunctions label,
+#sessionResearcherIdFunctions label,
+#areaNameFunctions label,
+#areaNumberOfBusinessesFunctions label,
+#areaPostcodeFunctions label {
+
+	display: block;
+	margin-bottom: 20px;
+}
+
+#postcode label {
+	display: block;
+	margin-bottom: 20px;
+}
+
+
+#sessionType,
+#sessionName,
+#sessionId,
+#attendanceCount,
+#sessionBusinessId,
+#sessionResearcherId,
+#areaName,
+#areaNumberOfBusinesses,
+#areaPostcode {
+
+	color: black;
+	width: 500px;
+}
+
+
+
+#sessionDetailsContainer,
+#areaDetailsContainer {
+
+	background-color: #444444;
+	padding: 0px;
+	display: flex;
+	flex-direction: column;
+	height: 200px;
+
+}
+
+
+#sessionDetailsID,
+#areaDetailsID {
+
+	align-self: flex-start;
+	position: static;
+	margin: 0;
+	font-size: 50px;
+
+}
+
+#sessionDetailsValue,
+#areaDetailsValue {
+
+	margin: auto;
+	align-self: center;
+}
+
+#sessionDetailsRole {
+
+	background-color: rgba(0, 0, 0, 0.901);
+	height: 350px;
+
+}
+
+#areaDetailsRole {
+
+	background-color: rgba(0, 0, 0, 0.901);
+	height: 200px;
+}
+
+#sessionDetailsLabels h1,
+#areaDetailsLabels h1 {
+
+	margin: 0;
+	text-align: left;
+	position: static;
+	font-size: 45px;
+}
+
+#sessionDetailsViewer h1 {
+
+	color: black;
+	margin: 0;
+	text-align: left;
+	position: static;
+}
+
+#sessionDetailsViewer {
+
+	background-color: #bbb8b8;
+	height: 500px;
+}
+
+#sessionDetailsForm button {
+
+	font-size: 40px;
+	height: 80px;
+	background-color: black;
+}
+
+#sessionDetailsForm {
+
+	display: flex;
+	align-items: top;
+	gap: 20px;
+	background-color: #bbb8b8;
+	height: 80px;
+}
+
+#sessionDetailsViewer hr {
+
+	width: 95%;
+	height: 2px;
+	margin: 0px auto;
+	background-color: black;
+	border: none;
+}
+
+.filterText {
+	color: #000000;
+}
+
+#manageSections {
+
+	background-color: black;
+	height: 300px;
+	position: relative;
+	min-height: 300px;
+	text-align: center;
+	padding-top: 20px;
+}
+
+#sessionHR {
+
+	width: 80%;
+	height: 2px;
+	margin: 20px auto;
+	background-color: black;
+	border: none;
+}
+
+.sessionTab-panel,
+.areaTab-panel {
+	color: black;
+	background-color: black;
+	border-bottom: 10px solid black;
+	border-left: auto solid black;
+	width: 100%;
+	display: none;
+	margin: 0;
+}
+
+#sessionTabForms,
+#areaTabForms {
+
+	background-color: black;
+	text-align: left;
+
+
+}
+
+#sessionTabForms input,
+#areaTabForms input {
+	color: black;
+}
+
+#sessionTable,
+#sessionTable table,
+#sessionTable td,
+#areaTable,
+#areaTable table,
+#areaTable td,
+#sessionBusinessTable,
+#sessionBusinessTable td,
+#sessionResearcherTable,
+#sessionResearcherTable td {
+	color: white;
+	background-color: grey;
+	width: 100%;
+	table-layout: fixed;
+	border: 1px solid black;
+}
+
+#sessionTable th,
+#areaTable th,
+#sessionBusinessTable th,
+#sessionResearcherTable th {
+	background-color: #666666;
+}
+
+
+
+
+#addSessionButton,
+#editSessionButton,
+#deleteSessionButton,
+#showSessionTableButton,
+#addAreaButton,
+#editAreaButton,
+#deleteAreaButton,
+#showAreaTableButton {
+	background-color: #666666;
+	Color: black;
+
+}
+
+#showSessionTableButton {
+	width: 300px;
+	height: 50px;
+	display: block;
+	margin-top: 122px;
+	position: absolute;
+	left: 550px;
+}
+
+#showAreaTableButton {
+	width: 300px;
+	height: 50px;
+	display: block;
+	margin-top: 50px;
+	position: absolute;
+	left: 550px;
+}
+
+#sessionBusinessTable,
+#sessionResearcherTable {
+	margin-top: 20px;
+	display: none;
+
+
+}
+
+#sessionBusinessTable th,
+#sessionBusinessTable td,
+#sessionResearcherTable th,
+#sessionResearcherTable td {
+	width: 10%;
+
+}
+
+#sessionDetailsResearchersButton,
+#sessionDetailsBusinessesButton {
+
+	color: white;
+	background-color: #666666;
+}
+
+.submit-button {
+	background-color: #D3D3D3;
+	color: black;
+	border-radius: 4px;
+	transition: 0.5s ease;
+}
+
+.submit-button:hover {
+	border-color: white;
+}
+
+#researchers-table {
+	margin: 0px auto;
+	padding-left: 6%;
+	padding-right: 6%;
+	overflow-x: auto;
+	background-color: #777676;
+	display: none;
+}
+
+#researchers-table table {
+	width: 80%;
+	background-color: #444;
+	border-collapse: collapse;
+	border-radius: 10px;
+	color: black;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#researchers-table th {
+	background-color: #666666;
+	color: white;
+	padding: 3px;
+	text-align: left;
+}
+
+#researchers-table td {
+	background-color: #D3D3D3;
+	padding: 2px;
+	color: black;
+}
+
+#researchers-table tr {
+	background-color: black;
+}
+
+#button-surround {
+	background-color: #777676;
+	text-align: center;
+}
+
+#table-toggle {
+	color: black;
+	display: inline-block;
+	text-align: left;
+}
+
+#researcher-table-title {
+	display: inline block;
+	margin: 0px;
+	text-align: center;
+}
+
+#researchersChart {
+	margin: 0px;
+	align-items: center;
+}
+
+#myChart {
+	display: block;
+	margin: 0px auto;
+}
+
+#researcherChartTitle {
+	text-align: center;
+}
+
+.title-line-break-bottom {
+	border: none;
+	border-top: 2px solid #444;
+	width: 80%;
+	margin: 0px auto;
+	padding: 5px auto;
+}
+
+.title-line-break-top {
+	border: none;
+	border-bottom: 2px solid #444;
+	width: 80%;
+	margin: 0px auto;
+	padding: 5px auto;
+}
+
+.title-wrapper {
+	background-color: #333;
+}
+
+.researcher-details {
+	background-color: #333;
+	margin: 0px;
+	padding: 5px;
+	text-align: center;
+	font-size: 1.35rem;
+}
+
+.rD-element {
+	background-color: lightgray;
+	border-radius: 5px;
+	color: black;
+	display: inline-block;
+	width: 40%;
+	padding: 3px;
+}
+
+.researcherDetailsTable {
+	margin: 0px auto;
+	padding-left: 6%;
+	padding-right: 6%;
+	overflow-x: auto;
+	background-color: #333;
+	text-align: center;
+}
+
+.researcherDetailsTable table {
+	width: 100%;
+	background-color: #444;
+	border-collapse: collapse;
+	border-radius: 10px;
+	color: black;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.researcherDetailsTable th {
+	background-color: #666666;
+	color: white;
+	padding: 3px;
+	text-align: left;
+}
+
+.researcherDetailsTable td {
+	background-color: #D3D3D3;
+	padding: 2px;
+	color: black;
+}
+
+.researcherDetailsTable tr {
+	background-color: black;
+}
+
+.researcherDetailsH2 {
+	background-color: #333;
+	color: white;
+	font-size: 3rem;
+	text-align: center;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+#reports-title {
+	color: black;
+	font-size: 2rem;
+	text-align: center;
+	margin: 0px;
+	background-color: #666666;
+	padding: 10px;
+	margin-top: 0px;
+}
+
+.title-line-break-bottom {
+	border: none;
+	border-top: 2px solid #444;
+	width: 80%;
+	margin: 0px auto;
+	padding: 5px auto;
+}
+
+.title-line-break-top {
+	border: none;
+	border-bottom: 2px solid #444;
+	width: 80%;
+	margin: 0px auto;
+	padding: 5px auto;
+}
+
+.title-wrapper {
+	background-color: #666666;
+}
+
+#report-buttons {
+	background-color: black;
+	padding: 5%;
+	padding-top: 0px;
+}
+
+.report-button {
+	width: 6rem;
+	color: black;
+	background-color: #D3D3D3;
+	border: none;
+	border-radius: 9px;
+}
+
+.report-summary {
+	background-color: #88807B;
+	border-radius: 9px;
+	padding: 10px;
+}
+
+.report-button:hover {
+	background-color: grey;
+}
+
+#report {
+	margin: 0px auto;
+	padding-left: 6%;
+	padding-right: 6%;
+	overflow-x: auto;
+	background-color: black;
+}
+
+#report table {
+	width: 80%;
+	background-color: #444;
+	border-collapse: collapse;
+	border-radius: 10px;
+	color: black;
+}
+
+#report th {
+	background-color: #666666;
+	color: white;
+	padding: 3px;
+	text-align: left;
+}
+
+#report td {
+	background-color: #D3D3D3;
+	padding: 2px;
+	color: black;
+}
+
+#report tr {
+	background-color: black;
+}

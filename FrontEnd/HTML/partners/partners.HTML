@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partners</title>
+	<link rel="stylesheet" href="../../CSS/style.css">
+	<link rel="icon" type="image/png" href="https://drive.google.com/thumbnail?id=1R7waxfnSfrnAyf5ncie_waqj6zBP5m3f">
+ <script src="../../JavaScript/Partners/partnerScript.js"></script> 
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.0/chart.umd.min.js"></script>
+ 
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    <img src="https://drive.google.com/thumbnail?id=1R7waxfnSfrnAyf5ncie_waqj6zBP5m3f" alt="Logo">
+  </div>
+
+  <h1 class="title">
+    University of East London <br><span style="font-size: 0.6em;">Sustainability Research Institute</span>
+  </h1>
+
+  <nav>
+    <a href = "../menu.html">Home</a> |
+    <a href= "../researchers/researchers.html">Researchers</a> |
+    <a href= "../publications/publications.HTML">Publications</a> |
+    <a href= "../projects/projects.html">Projects</a> |
+    <a href= "../partners/partners.HTML">Partners</a> |
+    <a href= "../areas/areas.HTML">Areas</a> | 
+    <a href= "../business/businesses.HTML">Businesses</a> |
+    <a href= "../sessions/sessions.HTML">Sessions</a> |
+    <a href= "../reports.html">Reports</a>
+  </nav>
+</header>
+
+<!-- Partners Page Content -->
+
+ <img src="../../Images/partner.jpg" alt="Session">
+
+<h2 id = "text_headerImage">PARTNERS <br><span style="font-size: 0.6em;">Helping to build a more sustainable future...</span></h2>
+
+<p id = "text_blackBox">Partners are an extremely important asset to the work of the Sustainability Research Institute, contributing to 
+  our mission of advancing knowledge and shaping a more sustainable future. Partners can have various roles, ranging from simpler roles
+  such as providing funding or resources to more complex collaborative efforts across a variety of projects and work.</p>
+
+<p id = "text_blackBox">This page allows administration staff to manage partner's details, ensuring that their information remains accurate and up-to-date.
+The details of current partners can also be accessed and searched through using the search tools below.</p>
+
+<h3 id = "search_title">Current Partners - Explore Our Network</h3>
+
+<hr style="border: 0; height: 2px; background: #333;">
+
+<form>
+<label for = "partnerName">Partner Name:</label>
+<input type="text" id="partnerNameInput" name="partnerName">
+<br>
+
+<label for = "partnerAidDesc">Aid Description:</label>
+<input type="text" id="partnerAidDescInput" name="partnerAidDesc">
+<br>
+
+<label for="sector">Sector:</label>
+<select id="roleInput" name="role">
+      <option value="">All</option>
+      <option value="Agriculture">Agriculture</option>
+      <option value="Construction">Construction</option>
+      <option value="Education">Education</option>
+      <option value="Energy">Energy</option>
+      <option value="Finance">Finance</option>
+      <option value="Healthcare">Healthcare</option>
+      <option value="Hospitality">Hospitality</option>
+      <option value="Manufacturing">Manufacturing</option>
+      <option value="Media">Media</option>
+      <option value="Professional Services">Professional Services</option>
+      <option value="Real Estate">Real Estate</option>
+      <option value="Retail">Retail</option>
+      <option value="Technology">Technology</option>
+      <option value="Telecommunications">Telecommunications</option>
+      <option value="Transportation">Transportation</option>
+      <option value="Individual">Individual</option>
+      <option value="Government">Government</option>
+</select>
+<br>
+
+<!-- <label for = "postcode">Postcode:</label>
+<input type="text" id="postcodeBox" name="postcode"> -->
+
+<label for="postcode">Postcode:</label>
+<select id="postcodeBoxRead" name="postcode">
+      <option value="">All</option>
+</select>
+<br>
+
+</form>
+
+<!--partner table -->
+<h3 id = table_extra_heading>Partners</h3>
+
+
+<details>
+  <summary id = table_extra_heading>Show / Hide Table</summary>
+    <table id = "partnerTable">
+    <tr>
+      <th>Partner ID</th>
+      <th>Partner Name</th>
+      <th>Partner Aid Description</th>
+      <th>Sector</th>
+      <th>Postcode</th>
+    </tr>
+    </table>
+</details>
+
+<h3 id = "text_blackBox">Manage Partners</h3>
+
+<hr style="border: 0; height: 2px; background: #666666;">
+
+<div class="tab-buttons">
+    <button onclick="openTab('a')">Add Partner</button>
+    <button onclick="openTab('b')">Edit Partner</button>
+    <button onclick="openTab('c')">Delete Partner</button>
+</div>
+
+<div id="a" class="tab-panel">
+<!-- Add Details Here -->
+
+<form id = "AP">
+
+<label for = "partnerName">Partner Name:</label>
+<input type="text" id="addPartnerName" name="partnerName">
+<br>
+
+<label for = "partnerAidDesc">Aid Description:</label>
+<input type="text" id="addPartnerAidDesc" name="partnerAidDesc">
+<br>
+
+<label for="sector">Sector:</label>
+<select id="addSector" name="role">
+      <option value="Agriculture">Agriculture</option>
+      <option value="Construction">Construction</option>
+      <option value="Education">Education</option>
+      <option value="Energy">Energy</option>
+      <option value="Finance">Finance</option>
+      <option value="Healthcare">Healthcare</option>
+      <option value="Hospitality">Hospitality</option>
+      <option value="Manufacturing">Manufacturing</option>
+      <option value="Media">Media</option>
+      <option value="Professional Services">Professional Services</option>
+      <option value="Real Estate">Real Estate</option>
+      <option value="Retail">Retail</option>
+      <option value="Technology">Technology</option>
+      <option value="Telecommunications">Telecommunications</option>
+      <option value="Transportation">Transportation</option>
+      <option value="Individual">Individual</option>
+      <option value="Government">Government</option>
+</select>
+<br>
+
+<!-- <label for = "postcode">Postcode:</label>
+<input type="text" id="addPostcode" name="postcode"> -->
+
+<label for="postcode">Postcode:</label>
+<select id="postcodeBoxAdd" name="postcode">
+</select>
+<br>
+
+<br><br>
+<button type = "submit">Add partner</button>
+
+</form>
+
+</div>
+<div id="b" class="tab-panel">
+<!-- Edit Details Here -->
+
+<form id = "EP">
+
+  <label for="partnerId">Partner ID:</label>
+    <select id="editPartnerId" name="partnerId">
+</select>
+<br>
+
+<label for = "partnerName">Partner Name:</label>
+<input type="text" id="editPartnerName" name="partnerName">
+<br>
+
+<label for = "partnerAidDesc">Aid Description:</label>
+<input type="text" id="editPartnerAidDesc" name="partnerAidDesc">
+<br>
+
+<label for="sector">Sector:</label>
+<select id="editSector" name="role">
+      <option value="Agriculture">Agriculture</option>
+      <option value="Construction">Construction</option>
+      <option value="Education">Education</option>
+      <option value="Energy">Energy</option>
+      <option value="Finance">Finance</option>
+      <option value="Healthcare">Healthcare</option>
+      <option value="Hospitality">Hospitality</option>
+      <option value="Manufacturing">Manufacturing</option>
+      <option value="Media">Media</option>
+      <option value="Professional Services">Professional Services</option>
+      <option value="Real Estate">Real Estate</option>
+      <option value="Retail">Retail</option>
+      <option value="Technology">Technology</option>
+      <option value="Telecommunications">Telecommunications</option>
+      <option value="Transportation">Transportation</option>
+      <option value="Individual">Individual</option>
+      <option value="Government">Government</option>
+</select>
+<br>
+
+<!-- <label for = "postcode">Postcode:</label>
+<input type="text" id="editPostcode" name="postcode"> -->
+
+<label for="postcode">Postcode:</label>
+<select id="postcodeBoxEdit" name="postcode">
+</select>
+<br>
+  
+<br><br>
+<button type = "submit">Edit partner</button>
+
+</form>
+
+</div>
+<div id="c" class="tab-panel">
+<!-- Delete Details Here -->
+
+<form id = "DP">
+  <label for="partnerId">Partner ID:</label>
+    <select id="deletePartnerId" name="partnerId">
+</select>
+<br>
+
+<label for = "partnerName">Partner Name:</label>
+<input type="text" id="deletePartnerName" name="partnerName">
+<br>
+
+<label for = "partnerAidDesc">Aid Description:</label>
+<input type="text" id="deletePartnerAidDesc" name="partnerAidDesc">
+<br>
+
+<label for="sector">Sector:</label>
+<select id="deleteSector" name="role">
+    <option value="Agriculture">Agriculture</option>
+      <option value="Construction">Construction</option>
+      <option value="Education">Education</option>
+      <option value="Energy">Energy</option>
+      <option value="Finance">Finance</option>
+      <option value="Healthcare">Healthcare</option>
+      <option value="Hospitality">Hospitality</option>
+      <option value="Manufacturing">Manufacturing</option>
+      <option value="Media">Media</option>
+      <option value="Professional Services">Professional Services</option>
+      <option value="Real Estate">Real Estate</option>
+      <option value="Retail">Retail</option>
+      <option value="Technology">Technology</option>
+      <option value="Telecommunications">Telecommunications</option>
+      <option value="Transportation">Transportation</option>
+      <option value="Individual">Individual</option>
+      <option value="Government">Government</option>
+</select>
+<br>
+
+<!-- <label for = "postcode">Postcode:</label>
+<input type="text" id="deletePostcode" name="postcode"> -->
+
+<label for="postcode">Postcode:</label>
+<select id="postcodeBoxDelete" name="postcode">
+</select>
+<br>
+
+<br><br>
+<button type = "submit">Delete partner</button>
+  
+</form>
+
+</div>
+
+<script>
+function openTab(id) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+}
+</script>
+
+<div>
+			<h2>Partners by Area</h2>
+			<div class="chart-container-full">
+				<canvas id="myCanvas"></canvas>
+			</div>
+		</div>
+
+<hr style="border: 0; height: 2px; background: #333;">
+
+	<!-- The Footer -->
+		<footer>
+			<p>Contact Us: <b>Email:</b> study@uel.ac.uk <b>Tel:</b> +44 3495 295867 <br>
+				<a href = "#top" id = "footer-nav">Back to Top</a>
+			</p>
+		</footer>
+
+</body>
+
+</html>

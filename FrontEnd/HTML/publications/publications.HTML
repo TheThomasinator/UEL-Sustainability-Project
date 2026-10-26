@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications</title>
+	<link rel="stylesheet" href="../../CSS/style.css">
+	<link rel="icon" type="image/png" href="https://drive.google.com/thumbnail?id=1R7waxfnSfrnAyf5ncie_waqj6zBP5m3f">
+  <script src="../../JavaScript/Publications/publicationsScript.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<header id = "top">
+  <div class="logo">
+    <img src="https://drive.google.com/thumbnail?id=1R7waxfnSfrnAyf5ncie_waqj6zBP5m3f" alt="Logo">
+  </div>
+
+  <h1 class="title">
+    University of East London <br><span style="font-size: 0.6em;">Sustainability Research Institute</span>
+  </h1>
+
+  <nav>
+    <a href = "../menu.html">Home</a> |
+    <a href= "../researchers/researchers.html">Researchers</a> |
+    <a href= "../publications/publications.HTML">Publications</a> |
+    <a href= "../projects/projects.html">Projects</a> |
+    <a href= "../partners/partners.HTML">Partners</a> |
+    <a href= "../areas/areas.HTML">Areas</a> | 
+    <a href= "../business/businesses.HTML">Businesses</a> |
+    <a href= "../sessions/sessions.HTML">Sessions</a> |
+    <a href= "../reports.html">Reports</a>
+  </nav>
+</header>
+
+<img src="../../Images/PublicationImage.jpg" alt="Publications">
+<h2 id = "text_headerImage">Publications <br><span style="font-size: 0.6em;">Documenting findings, spreading information</span></h2>
+</body>
+
+<p id = "text_blackBox">Publications are the main vessel that we use to share info to the public, these papers provide essential
+  information for both businesses and individuals alike to ensure that everyone has knowledge of how they can be more sustainable. 
+  With the support of or researchers and partners we can ensure that valuable info is gathered by researchers, funded by partners.</p>
+
+<p id = "text_blackBox">This page allows the management of publications, so information remains accurate and up-to-date.
+  Existing publications can be accessed using the search below.</p>
+
+<h3 id = "search_title">Current Publications - What we've found</h3>
+
+<hr style="border: 0; height: 2px; background: #333;">
+
+<canvas id="yearChart"></canvas>
+
+
+<form>
+<label for="filter">Filter:<br></label>
+
+<label for = "Title">Publication Title:</label>
+<input type="text" id="Title" name="Title">
+<br>
+
+<label for = "Summary">Publication Summary:</label>
+<input type="text" id="Summary" name="Summary">
+<br>
+
+<label for = "Details">Publication Details:</label>
+<input type="text" id="Details" name="Details">
+<br>
+
+<label for = "Date">Publication Date:</label>
+<input class = "filterText" type="date" id="Date" name="Date">
+<br>
+
+<h3 id = "text_blackBox">Manage Publications - Click on a publication to view it in more detail</h3>
+
+<table class="data-table" id = "publicationTable">
+	<thead>
+		<tr>
+			<th>Publication ID</th>
+			<th>Publication Title</th>
+			<th>Publication Date</th>
+			<th>Publication Details</th>
+			<th>Publication Summary</th>
+		</tr>
+	</thead>
+	<tbody></tbody>
+</table>
+
+<hr style="border: 0; height: 2px; background: #666666;">
+
+<div class="tab-buttons">                                                     <!--Top of tabs-->
+  <button type="button" onclick="openTab('Add')">Add Publication</button>
+  <button type="button" onclick="openTab('Edit')">Edit Publication</button>
+  <button type="button" onclick="openTab('Delete')">Delete Publication</button>
+  <button type="button" onclick="openTab('Assign')">Assign Researcher</button>
+  <button type="button" onclick="openTab('Unassign')">Unassign Researcher</button>
+</div>
+
+<div id="Add" class="tab-panel">                                                        <!--ADD-->
+<form>
+  <label for = "Title">Publication Title:</label>
+  <input type="text" id="addTitle" name="addTitle">
+  <br>
+
+  <label for = "Details">Publication Details:</label>
+  <input type="text" id="addDetails" name="addDetails">
+  <br>
+
+  <label for = "Summary">Publication Summary:</label>
+  <input type="text" id="addSummary" name="addSummary">
+  <br>
+
+  <label for = "Date">Publication Date:</label>
+  <input class = "filterText" type="date" id="addDate" name="addDate">
+  <br>
+
+  <button type = "Button" class = "filterText" id = "addButton" >Add</button>
+  <br>
+</form>
+</div>
+
+<div id="Edit" class="tab-panel">                                             <!--EDIT-->
+
+<form>
+  <label for="publicationID">Publication ID:</label>
+  <select id="editPublicationID" name="editPublicationID">
+    <!--Fill with all publication IDs using JS-->
+  </select>
+
+  <br>
+  <label for = "Title">Publication Title:</label>
+  <input type="text" id="editTitle" name="editTitle">
+  <br>
+
+  <label for = "Details">Publication Details:</label>
+  <input type="text" id="editDetails" name="editDetails">
+  <br>
+
+  <label for = "Summary">Publication Summary:</label>
+  <input type="text" id="editSummary" name="editSummary">
+  <br>  
+
+  <label for = "Date">Publication Date:</label>
+  <input class = "filterText" type="date" id="editDate" name="editDate">
+  <br>
+  
+  <button type = "Button" class = "filterText" id = "editButton" >Edit</button>
+  <br>
+  </form>
+
+</div>
+
+<div id="Delete" class="tab-panel">                                             <!--DELETE-->
+<!-- Delete Details Here -->
+
+<form>
+ <form>
+  <label for="publicationID">Publication ID:</label>
+  <select id="deletePublicationID" name="deletePublicationID">
+    <!--Fill with all publication IDs using JS-->
+  </select>
+
+  <br>
+  <label for = "Title">Publication Title:</label>
+  <input type="text" id="deleteTitle" name="deleteTitle" readonly>
+  <br>
+
+  <label for = "Details">Publication Details:</label>
+  <input type="text" id="deleteDetails" name="deleteDetails" readonly>
+  <br>
+
+  <label for = "Summary">Publication Summary:</label>
+  <input type="text" id="deleteSummary" name="deleteSummary" readonly>
+  <br>
+
+  <label for = "Date">Publication Date:</label>
+  <input class = "filterText" type="date" id="deleteDate" name="deleteDate" readonly>
+  <br>
+  
+  <button type = "Button" class = "filterText" id = "deleteButton" >Delete</button>
+  <br>
+</form>
+
+</div>
+
+<div id="Assign" class="tab-panel">                                                        <!--ADD-->
+<form>
+<label for="publication">Publication:</label>
+  <select id="assignPublication" name="assignPublication">
+    <!--Fill with all publications using JS-->
+  </select>
+  <br>
+  <label for="researcher">Researcher:</label>
+  <select id="assignResearcher" name="assignResearcher">
+    <!--Fill with all researchers using JS-->
+  </select>
+  <br>
+  <button type = "Button" class = "filterText" id = "assignButton" >Assign</button>
+  <br>
+</form>
+</div>
+
+<div id="Unassign" class="tab-panel">                                                        <!--ADD-->
+<form>
+<label for="publication">Publication:</label>
+  <select id="unassignPublication" name="unassignPublication">
+    <!--Fill with all publications using JS-->
+  </select>
+  <br>
+  <label for="researcher">Researcher:</label>
+  <select id="unassignResearcher" name="unassignResearcher">
+    <!--Fill with all publication IDs using JS-->
+  </select>
+  <br>
+  <button type = "Button" class = "filterText" id = "unassignButton" >Unassign</button>
+  <br>
+</form>
+</div>
+
+
+<script>
+function openTab(id) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+}
+</script>
+
+<hr style="border: 0; height: 2px; background: #333;">
+
+<footer>
+	<p>Contact Us: <b>Email:</b> study@uel.ac.uk <b>Tel:</b> +44 3495 295867 <br>
+		<a href = "#top" id = "footer-nav">Back to Top</a>
+	</p>
+</footer>
+</body>
+</html>

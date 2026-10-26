@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sessions</title>
+  <link rel="stylesheet" href="../../CSS/style.css">
+  <link rel="icon" type="image/png" href="https://drive.google.com/thumbnail?id=1R7waxfnSfrnAyf5ncie_waqj6zBP5m3f">
+  
+  <script src= "../../JavaScript/Sessions/sessionsScript.js";></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="https://drive.google.com/thumbnail?id=1R7waxfnSfrnAyf5ncie_waqj6zBP5m3f" alt="Logo">
+    </div>
+
+    <h1 class="title">
+      University of East London <br><span style="font-size: 0.6em;">Sustainability Research Institute</span>
+    </h1>
+
+    <nav>
+      <a href="../menu.html">Home</a> |
+      <a href="../researchers/researchers.html">Researchers</a> |
+      <a href="../publications/publications.HTML">Publications</a> |
+      <a href="../projects/projects.html">Projects</a> |
+      <a href="../partners/partners.HTML">Partners</a> |
+      <a href="../areas/areas.HTML">Areas</a> |
+      <a href="../business/businesses.HTML">Businesses</a> |
+      <a href="../sessions/sessions.HTML">Sessions</a> |
+      <a href="../reports.html">Reports</a>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <img id="headerImage" src="../../Images/sessions.jpg" alt="Sessions meeting">
+    <h2 id="text_headerImage">SESSIONS <br><span style="font-size: 0.6em;">Turning ideas into measurable results</span>
+    </h2>
+
+  </div>
+
+  <div id="sessionsDescription">
+
+    <p> The Sessions section provides an overview of scheduled and completed sessions related to research activities and
+      collaboration.
+      Users can explore session details, including topics,
+      participants, and relevant outcomes, allowing for better
+      organisation and tracking of ongoing work. This feature supports effective coordination,
+      encourages engagement, and ensures that key information from each session is easily accessible within the
+      platform.</p>
+
+  </div>
+
+  <div id="searchSessions">
+
+    <h2 id="searchSessionsHeader">Scheduled and Completed Sessions</h2>
+    <hr id="sessionHR">
+
+    <div class="sessionsSearchRow">
+
+     
+
+      <div class="sessionsSearchSection">
+
+        
+        
+
+        <h3>Search by:</h3>
+        <form id="sessionsForm">
+          
+          <div id="sessionIdFunctions">
+            <label for="sessionId"> Session ID:</label>
+            <input id="sessionId" name="sessionId">
+          </div>
+          <br>
+          <div id="sessionNameFunctions">
+            <label for="sessionName"> Session Name:</label>
+            <input id="sessionName" name="sessionName">
+          </div>
+          <br>
+          <div id="sessionTypeFunctions">
+            <label for="sessionType">Session Type:</label>
+            <select id="sessionType" name="sessionType">
+              <option value="All"> All </option>
+              <option value="Online">Online</option>
+              <option value="In-Person">In-Person</option>
+              <option value="Hybrid">Hybrid</option>
+            </select>
+          </div>
+          <br>
+          <div id="attendanceFunctions">
+            <label for="attendanceCount">Attendance Count:</label>
+            <input type="number" id="attendanceCount" name="attendanceCount" min="1" max="10000" step="1">
+          </div>
+          <br>
+          <div id="sessionBusinessIdFunctions">
+            <label for="sessionBusinessId"> Business ID:</label>
+            <input id="sessionBusinessId" name="sessionBusinessId">
+          </div>
+          <br>
+          <div id="sessionResearcherIdFunctions">
+            <label for="sessionResearcherId"> Researcher ID:</label>
+            <input id="sessionResearcherId" name="sessionResearcherId">
+          </div>
+
+          <button type="button" id="showSessionTableButton">Collapse table</button>
+          
+
+        </form>
+
+        <canvas id="sessionChart"></canvas>
+       
+    
+      </div>
+    </div>
+
+  </div>
+  <div id="sessionTable"></div>
+
+  <div id="manageSections">
+
+    <h2 id="searchSessionsHeader">Manage Sessions</h2>
+    <hr id="sessionHR" style="background-color: white;">
+
+    <div class="tab-buttons" style="padding-top: 0px; text-align: left">
+      <button onclick="openTab('a')">Add Session</button>
+      <button onclick="openTab('b')">Edit Session</button>
+      <button onclick="openTab('c')">Delete Session</button>
+    </div>
+
+    <div id="a" class="sessionTab-panel">
+
+
+      <form id="sessionTabForms">
+
+        <label for="addSessionName">Session Name:</label>
+        <input id="addSessionName" name="addSessionName">
+        <br>
+        <br>
+
+        <label for="addSessionType">Session Type:</label>
+        <select id="addSessionType" name="sessionType">
+          <option value="Online">Online</option>
+          <option value="In-person">In-person</option>
+          <option value="Hybrid">Hybrid</option>
+        </select>
+        <br>
+        <br>
+
+        <label for="addAttendanceCount">Attendance Count:</label>
+        <input type="number" id="addAttendanceCount" name="attendanceCount" min="1" max="10000" step="1">
+        <br>
+        <br>
+
+        <label for="addBusinessID">Business ID:</label>
+        <select id="addBusinessID" name="businessID">
+          <option value="A"></option>
+
+        </select>
+        <br>
+        <br>
+
+        <label for="addResearcherID">Researcher ID:</label>
+        <select id="addResearcherID" name="researcherID">
+          <option value="A"></option>
+
+        </select>
+        <br>
+        <br>
+        <button id="addSessionButton" type="button"> ADD SESSION</button>
+
+      </form>
+
+    </div>
+
+    <div id="b" class="sessionTab-panel">
+
+
+      <form id="sessionTabForms">
+
+
+        <label for="editSessionID">Session ID:</label>
+        <select id="editSessionID" name="sessionID">
+          <option value="A">Select A Session ID:</option>
+          
+        </select>
+        <br>
+        <br>
+
+        
+         <label for="editSessionName">Session Name:</label>
+        <input id="editSessionName" name="editSessionName">
+        <br>
+        <br>
+
+         <label for="editSessionType">Session Type:</label>
+        <select id="editSessionType" name="sessionType">
+          <option value="Online">Online</option>
+          <option value="In-person">In-person</option>
+          <option value="Hybrid">Hybrid</option>
+        </select>
+        <br>
+        <br>
+
+        <label for="editAttendanceCount">Attendance Count:</label>
+        <input type="number" id="editAttendanceCount" name="attendanceCount" min="1" max="10000" step="1">
+        <br>
+        <br>
+
+        <label for="editBusinessID">Business ID:</label>
+        <select id="editBusinessID" name="businessID">
+          <option value="A"></option>
+
+        </select>
+        <br>
+        <br>
+
+        <label for="editResearcherID">Researcher ID:</label>
+        <select id="editResearcherID" name="researcherID">
+          <option value="A"></option>
+
+        </select>
+        <br>
+        <br>
+        <button id="editSessionButton" type="button"> EDIT SESSION</button>
+
+      </form>
+
+    </div>
+
+    <div id="c" class="sessionTab-panel">
+
+
+      <form id="sessionTabForms">
+
+        <label for="deleteSessionID">Session ID:</label>
+        <select id="deleteSessionID" name="deleteSessionID">
+          <option value="A">Select A Session ID:</option>
+          
+        </select>
+        <br>
+        <br>
+
+         <label for="deleteSessionName">Session Name:</label>
+        <input id="deleteSessionName" name="deleteSessionName" readonly>
+        <br>
+        <br>
+
+         <label for="deleteSessionType">Session Type:</label>
+        <select disabled id="deleteSessionType" name="deleteSessionType">
+          <option value="Online">Online</option>
+          <option value="In-person">In-person</option>
+          <option value="Hybrid">Hybrid</option>
+        </select>
+        <br>
+        <br>
+
+        <label for="deleteAttendanceCount">Attendance Count:</label>
+        <input type="number" id="deleteAttendanceCount" name="deleteAttendanceCount" min="1" max="10000" step="1" readonly>
+        <br>
+        <br>
+
+        <label for="deleteBusinessID">Business ID:</label>
+        <select disabled id="deleteBusinessID" name="deleteBusinessID" >
+          <option value="A"></option>
+
+        </select>
+        <br>
+        <br>
+
+        <label for="deleteResearcherID">Researcher ID:</label>
+        <select disabled id="deleteResearcherID" name="deleteResearcherID">
+          <option value="A"></option>
+
+        </select>
+        <br>
+        <br>
+        <button id="deleteSessionButton" type="button"> DELETE SESSION</button>
+
+      </form>
+
+    </div>
+
+
+
+  </div>
+
+
+  
+
+
+
+
+
+  </div>
+
+  <script>
+    function openTab(id) {
+      document.querySelectorAll('.sessionTab-panel').forEach(p => p.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+      console.log("Tab Clicked:", id);
+       document.getElementById("sessionTabForms").reset();
+       resetSessionForm();
+
+      if (id === 'a') {
+        loadAddSessionData();
+    } 
+    else if (id === 'b') {
+        loadEditSessionData();
+    } 
+    else if (id === 'c') {
+        loadDeleteSessionData();
+       
+    }
+  }
+      
+    
+    
+  </script>
+
+  
+
+  
+
+  <footer>
+    <p>Contact Us: <b>Email:</b> study@uel.ac.uk <b>Tel:</b> +44 3495 295867 <br>
+      <a href="" id="footer-nav">Back to Top</a>
+    </p>
+  </footer>
+
+</body>
+
+</html>

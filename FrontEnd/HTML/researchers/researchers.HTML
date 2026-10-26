@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Researchers</title>
+  <link rel="stylesheet" href="../../CSS/style.css">
+  <link rel="icon" type="image/png" href="https://drive.google.com/thumbnail?id=1R7waxfnSfrnAyf5ncie_waqj6zBP5m3f">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.0/chart.umd.min.js"></script>
+</head>
+
+<body>
+
+  <header id="top">
+    <div class="logo">
+      <img src="https://drive.google.com/thumbnail?id=1R7waxfnSfrnAyf5ncie_waqj6zBP5m3f" alt="Logo">
+    </div>
+
+    <h1 class="title">
+      University of East London <br><span style="font-size: 0.6em;">Sustainability Research Institute</span>
+    </h1>
+
+    <nav>
+      <a href="../menu.html">Home</a> |
+      <a href="../researchers/researchers.HTML">Researchers</a> |
+      <a href="../publications/publications.HTML">Publications</a> |
+      <a href="../projects/projects.html">Projects</a> |
+      <a href="../partners/partners.HTML">Partners</a> |
+      <a href="../areas/areas.HTML">Areas</a> |
+      <a href="../business/businesses.HTML">Businesses</a> |
+      <a href="../sessions/sessions.HTML">Sessions</a> |
+      <a href="../reports.html">Reports</a>
+    </nav>
+  </header>
+
+  <!-- Researchers Page Content -->
+  <img src="../../Images/researcher.jpg" alt="Researchers">
+  <h2 id="text_headerImage">RESEARCHERS <br><span style="font-size: 0.6em;">Advancing knowledge, shaping the
+      future...</span></h2>
+</body>
+
+<p id="text_blackBox">Researchers are the driving force behind innovation and sustainable solutions, fostering
+  collaboration and knowledge
+  sharing across disciplines and throughout the wider community. Our researchers carry out a range of work, such as
+  holding one-to-one meetings with
+  business representatives to advise them in making their business more sustainable, pioneering cutting edge
+  sustainability projects, alongside various
+  partners in aid of the wider community, and coming together to write papers and publications to share with the public.
+</p>
+
+
+<p id="text_blackBox">This page allows administration staff to manage researcher profiles, ensuring that their
+  information remains accurate and up-to-date.
+  The details of current researchers can also be accessed and searched through using the search tools below.</p>
+
+<h3 id="search_title">Current Researchers - Explore Our Team</h3>
+
+<hr style="border: 0; height: 2px; background: #333;">
+
+<form>
+  <label for="filterForename">Forename:</label>
+  <input type="text" id="filterForename">
+  <br>
+
+  <label for="filterSurname">Surname:</label>
+  <input type="text" id="filterSurname">
+  <br>
+
+  <label for="filterRole">Role:</label>
+  <select id="filterRole">
+    <option value="">Any</option>
+    <option value="project manager">Project Manager</option>
+    <option value="project assistant">Project Assistant</option>
+    <option value="lead researcher">Lead Researcher</option>
+    <option value="assistant researcher">Assistant Researcher</option>
+    <option value="session manager">Session Manager</option>
+    <option value="session instructor">Session Instructor</option>
+  </select>
+  <br>
+
+  <label for="filterAreaOfExpertise">Area of Expertise:</label>
+  <input type="text" id="filterAreaOfExpertise">
+  </select>
+</form>
+
+<div id="button-surround">
+  <button id="table-toggle">Show Table ▼</button>
+  <h2 id="researcher-table-title">Researchers</h2>
+  <div id="researchers-table"></div>
+</div>
+
+<h3 id="text_blackBox">Manage Researchers</h3>
+
+<hr style="border: 0; height: 2px; background: #666666;">
+
+
+
+<div class="tab-buttons">
+  <button onclick="openTab('a')">Add Researcher</button>
+  <button onclick="openTab('b')">Edit Researcher</button>
+  <button onclick="openTab('c')">Delete Researcher</button>
+</div>
+
+<div id="a" class="tab-panel">
+  <!-- Add Details Here -->
+
+  <form id="addResearcherForm">
+    <label for="addResearcherForename">Forename:</label>
+    <input type="text" id="addResearcherForename">
+
+    <br>
+    <label for="addResearcherSurname">Surname:</label>
+    <input type="text" id="addResearcherSurname">
+
+    <br>
+    <label for="addResearcherRole">Role:</label>
+    <select id="addResearcherRole" name="role">
+      <option value="project manager">Project Manager</option>
+      <option value="project assistant">Project Assistant</option>
+      <option value="lead researcher">Lead Researcher</option>
+      <option value="assistant researcher">Assistant Researcher</option>
+      <option value="session manager">Session Manager</option>
+      <option value="session instructor">Session Instructor</option>
+    </select>
+
+    <br>
+    <label for="addResearcherAreaOfExpertise">Area of Expertise:</label>
+    <input type="text" id="addResearcherAreaOfExpertise">
+
+    <br>
+    <label for="addResearcherEmail">Email:</label>
+    <input type="text" id="addResearcherEmail">
+
+    <br>
+    <label for="addResearcherTelephone">Telephone:</label>
+    <input type="text" id="addResearcherTelephone">
+
+    <br>
+    <button class="submit-button" id="addResearcherButton">Add Researcher</button>
+  </form>
+
+</div>
+<div id="b" class="tab-panel">
+  <!-- Edit Details Here -->
+
+  <form id="editResearcherForm">
+
+    <label for="editResearcherId">Researcher ID:</label>
+    <select id="editResearcherId">
+    </select>
+
+    <br>
+    <label for="editResearcherForename">Forename:</label>
+    <input type="text" id="editResearcherForename">
+
+    <br>
+    <label for="editResearcherSurname">Surname:</label>
+    <input type="text" id="editResearcherSurname">
+
+    <br>
+    <label for="editResearcherRole">Role:</label>
+    <select id="editResearcherRole">
+      <option value="project manager">Project Manager</option>
+      <option value="project assistant">Project Assistant</option>
+      <option value="lead researcher">Lead Researcher</option>
+      <option value="assistant researcher">Assistant Researcher</option>
+      <option value="session manager">Session Manager</option>
+      <option value="session instructor">Session Instructor</option>
+    </select>
+
+    <br>
+    <label for="editResearcherAreaOfExpertise">Area of Expertise:</label>
+    <input type="text" id="editResearcherAreaOfExpertise">
+
+    <br>
+    <label for="editResearcherEmail">Email:</label>
+    <input type="text" id="editResearcherEmail">
+
+    <br>
+    <label for="editResearcherTelephone">Telephone:</label>
+    <input type="text" id="editResearcherTelephone">
+
+    <br>
+    <button class="submit-button" id="editResearcherButton">Edit Researcher</button>
+
+  </form>
+
+</div>
+<div id="c" class="tab-panel">
+  <!-- Delete Details Here -->
+
+  <form id="deleteResearcherForm">
+    <label for="deleteResearcherId">Researcher ID:</label>
+    <select id="deleteResearcherId">
+    </select>
+
+    <br>
+    <button class="submit-button" id="deleteResearcherButton">Delete Researcher</button>
+  </form>
+
+</div>
+
+<script>
+  function openTab(id) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+  }
+</script>
+
+<div id="researchersChart">
+  <h2 id="researcherChartTitle">Researcher Roles</h2>
+  <canvas id="myChart" width="600px" height="600px"></canvas>
+</div>
+
+<hr style="border: 0; height: 2px; background: #333;">
+
+<footer>
+  <p>Contact Us: <b>Email:</b> study@uel.ac.uk <b>Tel:</b> +44 3495 295867 <br>
+    <a href="#top" id="footer-nav">Back to Top</a>
+  </p>
+</footer>
+
+<script src="../../JavaScript/Researchers/researchersScript.js"></script>
+</body>
+
+</html>
